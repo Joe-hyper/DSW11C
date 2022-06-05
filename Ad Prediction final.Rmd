@@ -1,0 +1,227 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+Title: Cryptograph Ads Prediction
+Author: Joseph Njuguna
+Date: 27/5/22
+Output: pdf_document
+
+
+#1.Defining the question
+
+
+#a) Specifying the question
+    Identify individuals most likely to click on ads.  
+
+#b) Defining the metric for success
+    Ability to identify individuals that click on ads.
+
+#c) Understanding the context
+    A Kenyan entrepreneur has created an online cryptography course and would want to advertise it on her blog. She currently targets audiences originating from various countries. In the past, she ran ads to advertise a related course on the same blog and collected data in the process. She would now like to employ your services as a Data Science Consultant to help her identify which individuals are most likely to click on her ads. 
+
+
+#d) Recording the experimental design
+    -Define the question, the metric for success, the context, experimental design taken and the appropriateness of the available data to answer the given question.
+    -Find and deal with outliers, anomalies, and missing data within the dataset.
+    -Perform  univariate and bivariate analysis.
+    -From your insights provide a conclusion and recommendation.
+
+#2. Reading the data
+```{r}
+# choosing working directory that has uploaded file
+getwd()
+setwd("C:/Users/jojo/Downloads/R basics")
+# using .csv to read dataset
+# must have utils package installed.
+adsop <- read.csv("advertising.csv", header= TRUE, sep= ",")
+# view dataset
+View(adsop)
+```
+
+
+#3. Checking the data
+
+# viewing first 5 rows of our dataset
+```{r}
+head(adsop)
+```
+# viewing last 5 rows of our dataset
+```{r}
+tail(adsop)
+```
+# checking data types
+```{r}
+str(adsop)
+```
+    # Our data types are numeric, integer, character.
+# shape of data
+```{r}
+dim(adsop)
+```
+    # Our dataset has 1000rows, 10 columns
+# descriptive statistical summary of our dataset
+```{r}
+summary(adsop)
+```
+#4. Tidying the data
+
+# checking for duplicate records in our df
+```{r}
+duplicates <- adsop[duplicated(adsop),]
+duplicates
+```
+    # No duplicate records in our dataset
+
+# missing values
+# list of columns and mising values
+```{r}
+colSums(is.na(adsop))
+```
+    # No missing values in our dataset.
+# checking for outliers
+# listing numerical columns as we can only get outliers for numerical columns
+```{r}
+numerical <- list(adsop$Daily.Time.Spent.on.Site,adsop$Age,
+adsop$Area.Income,adsop$Daily.Internet.Usage,adsop$Male, adsop$Clicked.on.Ad)
+```
+
+# creating boxplots
+```{r}
+boxplot(numerical, names=c('Daily.Time.Spent.on.Site', 'Age', 'Area.Income', 'Daily.Internet.Usage', 'Male', 'Clicked.on.Ad'), main='Outliers', las=3)
+```
+    # Outliers only exist in our area.income column
+    # It is not necessary to remove them.
+    
+    
+#5. Data Anlaysis
+# Univariate Analysis
+# Measures of central tendecy
+
+# Mean
+
+```{r}
+colMeans(adsop[sapply(adsop, is.numeric)])
+```
+    # The mean age of respondents is 36 years.
+    # Mean area income is $55,000.
+    # Mean time spent on site daily is 65 minutes.
+# Median
+
+
+# daily time spent on site
+```{r}
+median(adsop$Daily.Time.Spent.on.Site)
+```
+# age
+```{r}
+median(adsop$Age)
+```
+# area income
+```{r}
+median(adsop$Area.Income)
+```
+# daily internet usage
+```{r}
+median(adsop$Daily.Internet.Usage)
+```
+# Measures of dispersion
+# Variance
+
+
+# daily time spent on site
+```{r}
+var(adsop$Daily.Time.Spent.on.Site)
+```
+# age
+```{r}
+var(adsop$Age)
+```
+
+# area income
+```{r}
+var(adsop$Area.Income)
+```
+
+# daily internet usage
+```{r}
+var(adsop$Daily.Internet.Usage)
+```
+
+
+# Standard deviation
+# daily time spent on site, age, area income, internet usage, male, clicked on ad
+```{r}
+sd(adsop$Daily.Time.Spent.on.Site)
+sd(adsop$Age)
+sd(adsop$Area.Income)
+sd(adsop$Daily.Internet.Usage)
+sd(adsop$Male)
+sd(adsop$Clicked.on.Ad)
+```
+# histogram - time spent on site
+```{r}
+hist(adsop$Daily.Time.Spent.on.Site)
+```
+    # 80 minutes is the most frequent time spent by users on site
+# hist - Area income
+```{r}
+hist(adsop$Area.Income)
+```
+    # Highest area income revenue is $60,000 
+# histogram on gender distribution
+```{r}
+hist(adsop$Male)
+```
+    # Number of female respondents were slightly higher than male respondents.
+
+
+# Bivariate Analysis
+## Numerical-Numerical variables
+
+
+
+```{r}
+# Visualisation of daily time spent on site by age
+# ---
+# 
+ggplot(adsop, aes(Age, colour = Daily.Time.Spent.on.Site)) +
+geom_freqpoly(binwidth = 1) + labs(title="Daily Time Spent on Site by Age")
+
+```
+    We can observe that the highest amount of daily time spent on site increases steadily from age group 23-33 and decreases after that.  
+
+
+```{r}
+ggplot(adsop, aes(Age, colour = Area.Income)) +
+geom_freqpoly(binwidth = 1) + labs(title="Age Distribution by Area Income")
+
+```
+    We observe that area income was highest around the 30-33 years age group.
+
+
+## Numerical-Categorical
+```{r}
+c <- ggplot(adsop, aes(x=Daily.Time.Spent.on.Site, fill=Male, color=Male)) +
+geom_histogram(binwidth = 1) + labs(title="Daily Time Spent On Site Distribution by Male")
+c + theme_bw()
+```
+
+
+#6. Conclusion
+   - Average of 60 min is spent on the site per day.
+
+
+#7. Recommendations
+    - Predictive modelling could be conducted to predict certain outcomes.
+    
+
+#8. Follow up questions
+
+#a) Did we have right data?
+    Yes.
+#b) Do we need other data to answer our question?
+    No.
+#c) Did we have the right question?
+    Yes.
