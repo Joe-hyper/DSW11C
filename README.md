@@ -1,7 +1,7 @@
 # CRYPTOGRAPH ADVERTISING
 
 ## Introduction
-A Kenyan entreprneur wishes to run cytograph ads for her course. As a data scientist consultat I will help her identify which individuals are most likely to click on her ads. 
+A Kenyan entreprneur wishes to run cyptograph ads for her course. As a data scientist consultat I will help her identify which individuals are most likely to click on her ads. 
 
 <!-- TABLE OF CONTENTS -->
 <details>
