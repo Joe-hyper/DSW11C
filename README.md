@@ -6,7 +6,8 @@ Joseph_Njuguna PW
 
 Name of contributor:
 
-Joseph Njuguna
+Joseph Njuguna![136077_original_2700x3819](https://user-images.githubusercontent.com/98313549/172040932-afed19c0-ac7e-41b0-954e-9cec6a7cf1f0.jpg)
+
 
 Project purpose:
 
