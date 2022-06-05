@@ -1,22 +1,127 @@
-This is a respository containing files for IP W12
+# CRYPTOGRAPH ADVERTISING
 
-Application name:
+## Introduction
+A Kenyan entreprneur wishes to run cytograph ads for her course. As a data scientist consultat I will help her identify which individuals are most likely to click on her ads. 
 
-Joseph_Njuguna PW
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#project-description">Project Description</a>
+      <ul>
+        <li><a href="#experimental-design">Experimental Design</a></li>
+        <li><a href="#success-criteria">Success Criteria</a></li>
+        <li><a href="#dataset">Dataset</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#technologies-used">Technologies Used</a></li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-Name of contributor:
+<!-- PROJECT DESCRIPTION -->
+## Project Description
+![cryptography-handbook-ch2](https://user-images.githubusercontent.com/98313549/172041904-3c4809fc-8a37-4c8d-aa84-8e89fedffa1c.jpg)
 
-Joseph Njuguna![136077_original_2700x3819](https://user-images.githubusercontent.com/98313549/172040932-afed19c0-ac7e-41b0-954e-9cec6a7cf1f0.jpg)
+Online advertising refers to using websites and other online venues as an advertising medium. In other words, adverts on the Internet. In online advertising, promotional messages appear on the screens of online laptops, desktops, tablets, smart TVs, and smartphones. This type of advertising has existed for about twenty-five years, i.e., ever since the Internet started becoming popular.
+
+<!-- EXPERIMENTAL DESIGN -->
+### Experimental Design
+
+1. Data Loading 
+2. Data Understanding 
+3. Data Relevance
+4. External Dataset Validation
+5. Data Preparation
+6. Univariate Analysis
+7. Bivariate Analysis
+8. Implementing the solution
+9. Challenging the solution
+10. Conclusion
+11. Follow up questions
+
+<!-- SUCCESS CRITERIA-->
+### Success Criteria
+
+ Ability to identify individuals that click on ads.
 
 
-Project purpose:
+<!-- DATASET -->
+### Dataset
+(http://bit.ly/IPAdvertisingData).
 
-Cryptograph Ad Prediction
+<!-- TECHNOLOGIES USED -->
 
-Setup/installation:
+## Technologies Used
 
-Install necessary R packages
+The languages/IDEs used in the analysis project were: 
 
-Technologies used
+**Languages**
 
-RStudio, R.
+[R](https://www.rdocumentation.org/)
+
+**IDE**
+
+[RStudio](https://www.rstudio.com/)
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+Steps to be takes to run the project locally.
+
+### Installation
+
+1. Download and install R base.
+* [Windows](https://cran.r-project.org/bin/windows/base/)
+* [Mac](https://cran.r-project.org/bin/macosx/)
+* [Linux (Debian, Fedora/Redhat, Ubuntu)](https://cran.r-project.org/)
+
+2. Download and install [RStudio](https://www.rstudio.com/products/rstudio/download/).
+3. Refer to the [RPubs publication](http://rpubs.com/deborah_masibo/908054).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+1. Refer to the R documentation https://www.rdocumentation.org/
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+List of helpful resources.
+
+* [R Docummentation](https://www.rdocumentation.org/)
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
